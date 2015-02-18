@@ -9,7 +9,7 @@ The WordPress Plugin Boilerplate includes the following files:
 * `.gitignore`. Used to exclude certain files from the repository.
 * `CHANGELOG.md`. The list of changes to the core project.
 * `README.md`. The file that you’re currently reading.
-* A `plugin-name` subdirectory that contains the source code - a fully executable WordPress plugin.
+* A `wppie` subdirectory that contains the source code - a fully executable WordPress plugin.
 
 ## Features
 
@@ -36,7 +36,7 @@ Locate the menu item that reads “The WordPress Plugin Boilerplate.”
 #### On Linux or OS X
 
 1. Copy the `WordPress-Plugin-Boilerplate` directory into your `wp-content/plugins` directory.
-2. Create a symbolic link between the `trunk` directory and the plugin. For example: `ln -s plugin-name/trunk /path/to/wordpress/wp-content/plugins/plugin-name`
+2. Create a symbolic link between the `trunk` directory and the plugin. For example: `ln -s wppie/trunk /path/to/wordpress/wp-content/plugins/wppie`
 3. In the WordPress dashboard, navigation to the *Plugins* page
 Locate the menu item that reads “The WordPress Plugin Boilerplate.”
 4. Click on *Activate.*
@@ -44,7 +44,7 @@ Locate the menu item that reads “The WordPress Plugin Boilerplate.”
 #### On Windows
 
 1. Copy the `WordPress-Plugin-Boilerplate` directory into your `wp-content/plugins` directory.
-2. Create a symbolic link between the `trunk` directory and the plugin. For example: `mklink /J path\to\wp-content\plugins \path\to\WordPress-Plugin-Boilerplate\trunk\plugin-name`
+2. Create a symbolic link between the `trunk` directory and the plugin. For example: `mklink /J path\to\wp-content\plugins \path\to\WordPress-Plugin-Boilerplate\trunk\wppie`
 3. In the WordPress dashboard, navigation to the *Plugins* page
 Locate the menu item that reads “The WordPress Plugin Boilerplate.”
 4. Click on *Activate.*
@@ -89,11 +89,11 @@ For reference, [here's a discussion](http://make.wordpress.org/themes/2013/03/04
 
 Note that if you include your own classes, or third-party libraries, there are three locations in which said files may go:
 
-* `plugin-name/includes` is where functionality shared between the dashboard and the public-facing parts of the side reside
-* `plugin-name/admin` is for all dashboard-specific functionality
-* `plugin-name/public` is for all public-facing functionality
+* `wppie/includes` is where functionality shared between the dashboard and the public-facing parts of the side reside
+* `wppie/admin` is for all dashboard-specific functionality
+* `wppie/public` is for all public-facing functionality
 
-Note that previous versions of the Boilerplate did not include `Plugin_Name_Loader` but this class is used to register all filters and actions with WordPress.
+Note that previous versions of the Boilerplate did not include `WordPress_Pie_Loader` but this class is used to register all filters and actions with WordPress.
 
 The example code provided shows how to register your hooks with the Loader class. More information will be provided in the upcoming documentation on the website.
 

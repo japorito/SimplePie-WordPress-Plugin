@@ -3,11 +3,11 @@
 /**
  * Fired during plugin activation
  *
- * @link       http://example.com
- * @since      1.0.0
+ * @link       http://dandrpodcast.com
+ * @since      0.0.1
  *
- * @package    Plugin_Name
- * @subpackage Plugin_Name/includes
+ * @package    WordPress_Pie
+ * @subpackage WordPress_Pie/includes
  */
 
 /**
@@ -15,19 +15,19 @@
  *
  * This class defines all code necessary to run during the plugin's activation.
  *
- * @since      1.0.0
- * @package    Plugin_Name
- * @subpackage Plugin_Name/includes
- * @author     Your Name <email@example.com>
+ * @since      0.0.1
+ * @package    WordPress_Pie
+ * @subpackage WordPress_Pie/includes
+ * @author     Jacob Saporito <japorito@gmail.com>
  */
-class Plugin_Name_Activator {
+class WordPress_Pie_Activator {
 
 	/**
 	 * Short Description. (use period)
 	 *
 	 * Long Description.
 	 *
-	 * @since    1.0.0
+	 * @since    0.0.1
 	 */
 	public static function activate() {
 
