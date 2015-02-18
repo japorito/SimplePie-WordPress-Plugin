@@ -3,7 +3,7 @@
 /**
  * Fired during plugin deactivation
  *
- * @link       http://dandrpodcast.com
+ * @link       https://github.com/japorito/SimplePie-WordPress-Plugin
  * @since      0.0.1
  *
  * @package    WordPress_Pie

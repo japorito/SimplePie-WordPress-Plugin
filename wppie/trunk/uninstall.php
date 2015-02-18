@@ -19,7 +19,7 @@
  * For more information, see the following discussion:
  * https://github.com/tommcfarlin/WordPress-Plugin-Boilerplate/pull/123#issuecomment-28541913
  *
- * @link       http://dandrpodcast.com
+ * @link       https://github.com/japorito/SimplePie-WordPress-Plugin
  * @since      0.0.1
  *
  * @package    WordPress_Pie

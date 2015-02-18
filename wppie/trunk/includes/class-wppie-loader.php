@@ -3,7 +3,7 @@
 /**
  * Register all actions and filters for the plugin
  *
- * @link       http://dandrpodcast.com
+ * @link       https://github.com/japorito/SimplePie-WordPress-Plugin
  * @since      0.0.1
  *
  * @package    WordPress_Pie
@@ -42,6 +42,15 @@ class WordPress_Pie_Loader {
 	protected $filters;
 
 	/**
+	* The array of shortcodes registered with WordPress.
+	*
+	* @since    0.0.1
+	* @access   protected
+	* @var      array    $filters    The filters registered with WordPress to fire when the plugin loads.
+	*/
+	protected $shortcodes;
+
+	/**
 	 * Initialize the collections used to maintain the actions and filters.
 	 *
 	 * @since    0.0.1
@@ -50,6 +59,7 @@ class WordPress_Pie_Loader {
 
 		$this->actions = array();
 		$this->filters = array();
+		$this->shortcodes = array();
 
 	}
 
@@ -79,6 +89,16 @@ class WordPress_Pie_Loader {
 	 */
 	public function add_filter( $hook, $component, $callback, $priority = 10, $accepted_args = 1 ) {
 		$this->filters = $this->add( $this->filters, $hook, $component, $callback, $priority, $accepted_args );
+	}
+
+	/**
+	* Add a new filter to the collection to be registered with WordPress.
+	*
+	* @since    0.0.1
+	* @param      ShortCode               $code             The name of the WordPress filter that is being registered.
+	*/
+	public function add_short_code( ShortCode $code ) {
+		$this->shortcodes[] = $code;
 	}
 
 	/**
@@ -122,6 +142,10 @@ class WordPress_Pie_Loader {
 
 		foreach ( $this->actions as $hook ) {
 			add_action( $hook['hook'], array( $hook['component'], $hook['callback'] ), $hook['priority'], $hook['accepted_args'] );
+		}
+
+		foreach ( $this->shortcodes as $code ) {
+			add_shortcode($code->get_tag(), 'run');
 		}
 
 	}

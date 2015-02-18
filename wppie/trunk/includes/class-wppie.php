@@ -6,7 +6,7 @@
  * A class definition that includes attributes and functions used across both the
  * public-facing side of the site and the dashboard.
  *
- * @link       http://dandrpodcast.com
+ * @link       https://github.com/japorito/SimplePie-WordPress-Plugin
  * @since      0.0.1
  *
  * @package    WordPress_Pie
@@ -97,6 +97,14 @@ class WordPress_Pie {
 	private function load_dependencies() {
 
 		/**
+		 * Custom Dependencies
+		 */
+		//simple pie
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/simplepie/autoloader.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/interface-shortcode.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-wppie-rss-shortcode.php';
+
+		/**
 		 * The class responsible for orchestrating the actions and filters of the
 		 * core plugin.
 		 */
@@ -171,6 +179,10 @@ class WordPress_Pie {
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
 
+	}
+
+	private function define_short_codes() {
+		$this->loader->add_short_code(new RSS_ShortCode());
 	}
 
 	/**

@@ -14,11 +14,11 @@
  *
  * @wordpress-plugin
  * Plugin Name:       WordPress Plugin Boilerplate
- * Plugin URI:        http://example.com/wppie-uri/
+ * Plugin URI:        https://github.com/japorito/SimplePie-WordPress-Plugin
  * Description:       This is a short description of what the plugin does. It's displayed in the WordPress dashboard.
  * Version:           0.0.1
- * Author:            Your Name or Your Company
- * Author URI:        http://example.com/
+ * Author:            Jacob Saporito
+ * Author URI:        https://github.com/japorito/SimplePie-WordPress-Plugin/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       wppie
@@ -34,7 +34,7 @@ if ( ! defined( 'WPINC' ) ) {
  * The code that runs during plugin activation.
  * This action is documented in includes/class-wppie-activator.php
  */
-function activate_plugin_name() {
+function activate_wppie() {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-wppie-activator.php';
 	WordPress_Pie_Activator::activate();
 }
@@ -43,13 +43,13 @@ function activate_plugin_name() {
  * The code that runs during plugin deactivation.
  * This action is documented in includes/class-wppie-deactivator.php
  */
-function deactivate_plugin_name() {
+function deactivate_wppie() {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-wppie-deactivator.php';
 	WordPress_Pie_Deactivator::deactivate();
 }
 
-register_activation_hook( __FILE__, 'activate_plugin_name' );
-register_deactivation_hook( __FILE__, 'deactivate_plugin_name' );
+register_activation_hook( __FILE__, 'activate_wppie' );
+register_deactivation_hook( __FILE__, 'deactivate_wppie' );
 
 /**
  * The core plugin class that is used to define internationalization,
@@ -66,10 +66,10 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-wppie.php';
  *
  * @since    0.0.1
  */
-function run_plugin_name() {
+function run_wppie() {
 
 	$plugin = new WordPress_Pie();
 	$plugin->run();
 
 }
-run_plugin_name();
+run_wppie();

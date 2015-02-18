@@ -1,0 +1,3 @@
+[submodule "wppie/trunk/includes/simplepie"]
+	path = wppie/trunk/includes/simplepie
+	url = https://github.com/simplepie/simplepie.git

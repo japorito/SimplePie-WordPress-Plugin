@@ -5,7 +5,7 @@
  *
  * This file is used to markup the public-facing aspects of the plugin.
  *
- * @link       http://dandrpodcast.com
+ * @link       https://github.com/japorito/SimplePie-WordPress-Plugin
  * @since      0.0.1
  *
  * @package    WordPress_Pie
