@@ -45,6 +45,16 @@ class RSS_ShortCode implements ShortCode {
             ?>
             <div class="item">
                 <h2><a href="<?php echo $item->get_permalink(); ?>"><?php echo $item->get_title(); ?></a></h2>
+                <?php
+                foreach ($item->get_enclosures() as $enclosure) {
+                    if (preg_match('/^audio/', $enclosure->get_type())) {
+                        echo "<p><audio src=\"" . $enclosure->get_link() . "\" controls preload=\"metadata\"></audio></p>";
+                    }
+                    else if (preg_match('/^video/', $enclosure->get_type())) {
+                        echo "<p><video src=\"" . $enclosure->get_link() . "\" controls preload=\"metadata\"></video></p>";
+                    }
+                }
+                ?>
                 <p><?php echo $item->get_description(); ?></p>
                 <p><small>Posted on <?php echo $item->get_date('j F Y | g:i a'); ?></small></p>
             </div>
