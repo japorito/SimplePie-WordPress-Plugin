@@ -145,7 +145,7 @@ class WordPress_Pie_Loader {
 		}
 
 		foreach ( $this->shortcodes as $code ) {
-			add_shortcode($code->get_tag(), 'run');
+			add_shortcode($code->get_tag(), array($code, 'run'));
 		}
 
 	}

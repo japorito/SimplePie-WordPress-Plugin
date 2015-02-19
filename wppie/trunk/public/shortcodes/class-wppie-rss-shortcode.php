@@ -18,7 +18,7 @@
 * @author     Jacob Saporito <japorito@gmail.com>
 */
 class RSS_ShortCode implements ShortCode {
-    public function run($options) {
+    public static function run($options) {
         $opts = shortcode_atts(array(
             'url' => 'invalid',
             'cache' => 'false'
@@ -41,7 +41,7 @@ class RSS_ShortCode implements ShortCode {
 
         ob_start();
 
-        foreach ($feed->get_items as $item) {
+        foreach ($feed->get_items() as $item) {
             ?>
             <div class="item">
                 <h2><a href="<?php echo $item->get_permalink(); ?>"><?php echo $item->get_title(); ?></a></h2>
@@ -54,7 +54,7 @@ class RSS_ShortCode implements ShortCode {
         return ob_get_clean();
     }
 
-    public function get_tag() {
-        return 'rss';
+    public static function get_tag() {
+        return 'wppie';
     }
 }

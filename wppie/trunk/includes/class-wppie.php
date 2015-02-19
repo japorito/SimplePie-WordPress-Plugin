@@ -75,6 +75,7 @@ class WordPress_Pie {
 		$this->set_locale();
 		$this->define_admin_hooks();
 		$this->define_public_hooks();
+		$this->define_short_codes();
 
 	}
 
@@ -102,7 +103,7 @@ class WordPress_Pie {
 		//simple pie
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/simplepie/autoloader.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/interface-shortcode.php';
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-wppie-rss-shortcode.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/shortcodes/class-wppie-rss-shortcode.php';
 
 		/**
 		 * The class responsible for orchestrating the actions and filters of the
