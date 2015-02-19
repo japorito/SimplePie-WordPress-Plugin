@@ -21,20 +21,21 @@ class RSS_ShortCode implements ShortCode {
     public static function run($options) {
         $opts = shortcode_atts(array(
             'url' => 'invalid',
-            'cache' => 'false'
+            'cache' => 'false',
+            'cachelocation' => WP_CONTENT_DIR . '/cache',
+            'cacheduration' => '300'
         ), $options);
 
         $feed = new SimplePie();
         $feed->set_feed_url($opts['url']);
 
-        //disable cache if set to false, if cache is set to true, leave as default
-        //(cached), finally if set to neither 'true' nor 'false', use this parameter
-        //to specify cache directory.
+        //disable cache if set to false, otherwise leave caching enabled
         if ($opts['cache'] == 'false') {
             $feed->enable_cache(false);
         }
-        else if ($opts['cache'] != 'true') {
-            $feed->set_cache_location($opts['cache']);
+        else {
+            $feed->set_cache_location($opts['cachelocation']);
+            $feed->set_cache_duration((int) $opts['cacheduration']);
         }
 
         $feed->init();
@@ -48,10 +49,10 @@ class RSS_ShortCode implements ShortCode {
                 <?php
                 foreach ($item->get_enclosures() as $enclosure) {
                     if (preg_match('/^audio/', $enclosure->get_type())) {
-                        echo "<p><audio src=\"" . $enclosure->get_link() . "\" controls preload=\"metadata\"></audio></p>";
+                        echo "<p><audio src=\"" . $enclosure->get_link() . "\" controls preload=\"none\"></audio></p>";
                     }
                     else if (preg_match('/^video/', $enclosure->get_type())) {
-                        echo "<p><video src=\"" . $enclosure->get_link() . "\" controls preload=\"metadata\"></video></p>";
+                        echo "<p><video src=\"" . $enclosure->get_link() . "\" controls preload=\"none\"></video></p>";
                     }
                 }
                 ?>
