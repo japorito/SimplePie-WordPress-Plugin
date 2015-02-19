@@ -8,17 +8,17 @@
  * registers the activation and deactivation functions, and defines a function
  * that starts the plugin.
  *
- * @link              http://example.com
+ * @link              https://github.com/japorito/SimplePie-WordPress-Plugin
  * @since             0.0.1
  * @package           WordPress_Pie
  *
  * @wordpress-plugin
- * Plugin Name:       WordPress Plugin Boilerplate
+ * Plugin Name:       WordPress Pie
  * Plugin URI:        https://github.com/japorito/SimplePie-WordPress-Plugin
- * Description:       This is a short description of what the plugin does. It's displayed in the WordPress dashboard.
+ * Description:       This is a very simple RSS client plugin for wordpress. Allows embedding RSS feeds via shortcode.
  * Version:           0.0.1
  * Author:            Jacob Saporito
- * Author URI:        https://github.com/japorito/SimplePie-WordPress-Plugin/
+ * Author URI:        https://github.com/japorito/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       wppie
