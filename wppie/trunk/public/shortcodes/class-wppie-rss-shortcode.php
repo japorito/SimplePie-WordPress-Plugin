@@ -44,7 +44,7 @@ class RSS_ShortCode implements ShortCode {
 
         foreach ($feed->get_items() as $item) {
             ?>
-            <div class="item">
+            <div class="wppie item">
                 <h2><a href="<?php echo $item->get_permalink(); ?>"><?php echo $item->get_title(); ?></a></h2>
                 <?php
                 foreach ($item->get_enclosures() as $enclosure) {
@@ -61,6 +61,8 @@ class RSS_ShortCode implements ShortCode {
             </div>
             <?php
         }
+
+        echo "<div class=\"pager\"></div>";
 
         return ob_get_clean();
     }

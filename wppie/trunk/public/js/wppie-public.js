@@ -4,29 +4,36 @@
 	/**
 	 * All of the code for your public-facing JavaScript source
 	 * should reside in this file.
-	 *
-	 * Note that this assume you're going to use jQuery, so it prepares
-	 * the $ function reference to be used within the scope of this
-	 * function.
-	 *
-	 * From here, you're able to define handlers for when the DOM is
-	 * ready:
-	 *
-	 * $(function() {
-	 *
-	 * });
-	 *
-	 * Or when the window is loaded:
-	 *
-	 * $( window ).load(function() {
-	 *
-	 * });
-	 *
-	 * ...and so on.
-	 *
-	 * Remember that ideally, we should not attach any more than a single DOM-ready or window-load handler
-	 * for any particular page. Though other scripts in WordPress core, other plugins, and other themes may
-	 * be doing this, we should try to minimize doing that in our own work.
 	 */
+	$(document).ready(function() {
+		var items = $('.wppie.item');
+
+		$('div.pager').pagination({
+			items: items.length,
+			itemsOnPage: 15,
+			cssStyle: 'compact-theme',
+			onInit: function() {
+				//get linked-to page number
+				var page = document.location.hash;
+				page = parseInt(page.substring(page.indexOf('-')+1));
+				page = isNaN(page) ? 1 : page;
+
+				$('div.pager').pagination('selectPage', page);
+			},
+			onPageClick: function(page) {
+				var shownMin = (page - 1) * this.itemsOnPage;
+				items.hide();
+
+				for (var i = 0; i < this.itemsOnPage; i++) {
+					if (shownMin + i === this.items) { break; }
+					$(items[shownMin + i]).show();
+				}
+
+				// Chrome tries to download the whole thing and chokes on this many
+				// items, so no metadata loading.
+				// $('audio:visible[preload="none"]', items).attr('preload', 'metadata');
+			}
+		});
+	});
 
 })( jQuery );

@@ -95,9 +95,16 @@ class WordPress_Pie_Public {
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
-
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/wppie-public.js', array( 'jquery' ), $this->version, false );
-
+		wp_enqueue_script( $this->plugin_name . 'page',
+						   plugin_dir_url( __FILE__ ) . 'js/simplepagination/jquery.simplePagination.js',
+						   array( 'jquery' ),
+						   $this->version,
+						   false );
+		wp_enqueue_script( $this->plugin_name,
+						   plugin_dir_url( __FILE__ ) . 'js/wppie-public.js',
+						   array( 'jquery' ),
+						   $this->version,
+						   false );
 	}
 
 }

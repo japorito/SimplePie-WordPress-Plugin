@@ -1,3 +1,6 @@
 [submodule "wppie/trunk/includes/simplepie"]
 	path = wppie/trunk/includes/simplepie
 	url = https://github.com/simplepie/simplepie.git
+[submodule "wppie/trunk/public/js/simplepagination"]
+	path = wppie/trunk/public/js/simplepagination
+	url = https://github.com/flaviusmatis/simplePagination.js.git
