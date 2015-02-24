@@ -62,7 +62,7 @@ class RSS_ShortCode implements ShortCode {
             <?php
         }
 
-        echo "<div class=\"pager\"></div>";
+        echo "<div class=\"wppie pager\"></div>";
 
         return ob_get_clean();
     }
