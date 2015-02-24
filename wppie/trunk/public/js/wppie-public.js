@@ -6,8 +6,19 @@
 	 * should reside in this file.
 	 */
 	$(document).ready(function() {
-		var items = $('.wppie.item'),
-			pager = $('.wppie.pager');
+		var items = $('.wppie_item'),
+			pager = $('.wppie_pager');
+
+		items.click(function() {
+			$('.wppie_content', this).slideToggle();
+		});
+
+		//only follow link if content is already expanded, otherwise, just expand
+		$('.wppie_item h2').click(function(event) {
+			if ($(this).siblings('.wppie_content:visible').length === 0) {
+				event.preventDefault();
+			}
+		});
 
 		if (pager.length > 0) {
 			pager.pagination({
