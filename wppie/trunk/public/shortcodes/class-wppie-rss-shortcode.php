@@ -22,7 +22,7 @@ class RSS_ShortCode implements ShortCode {
         $opts = shortcode_atts(array(
             'url' => 'invalid',
             'cache' => 'false',
-            'cachelocation' => WP_CONTENT_DIR . '/cache',
+            'cachelocation' => 'wpdb://localhost',
             'cacheduration' => '300'
         ), $options);
 

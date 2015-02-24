@@ -102,6 +102,7 @@ class WordPress_Pie {
 		 */
 		//simple pie
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/simplepie/autoloader.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-wordpress-cache.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/interface-shortcode.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/shortcodes/class-wppie-rss-shortcode.php';
 
