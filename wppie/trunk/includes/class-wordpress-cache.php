@@ -68,14 +68,13 @@ class WordPress_Cache extends SimplePie_Cache_DB
                     if ($items)
                     {
                         $sql = 'UPDATE `' . $this->options['prefix'] . 'cache_data` SET `items` = %d, `data` = %s, `mtime` = %d WHERE `id` = %s';
-                        $query = $this->wpdb->prepare($sql, $items);
+                        $query = $this->wpdb->prepare($sql, $items, $prepared[0], time(), $this->id);
                     }
                     else
                     {
                         $sql = 'UPDATE `' . $this->options['prefix'] . 'cache_data` SET `data` = %s, `mtime` = %d WHERE `id` = %s';
+                        $query = $this->wpdb->prepare($sql, $prepared[0], time(), $this->id);
                     }
-
-                    $query = $this->wpdb->prepare($sql, $prepared[0], time(), $this->id);
 
                     if (!$this->wpdb->query($query))
                     {
