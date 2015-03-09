@@ -62,7 +62,8 @@ class WordPress_Cache extends SimplePie_Cache_DB
             $query = $this->wpdb->prepare('SELECT COUNT(*) as ItemCount FROM `' . $this->options['prefix'] . 'cache_data` WHERE `id` = %s', $this->id);
             if ($query)
             {
-                if ($this->wpdb->get_results($query)[0]->ItemCount > 0)
+                $results = $this->wpdb->get_results($query);
+                if ($this->wpdb->num_rows && $results[0]->ItemCount > 0)
                 {
                     $items = count($prepared[1]);
                     if ($items)

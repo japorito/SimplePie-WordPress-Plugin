@@ -20,6 +20,10 @@
 			}
 		});
 
+		$('.wppie_item audio, .wppie_item video').click(function(event) {
+			event.stopPropagation();
+		});
+
 		if (pager.length > 0) {
 			pager.pagination({
 				items: items.length,
