@@ -105,6 +105,7 @@ class WordPress_Pie {
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-wordpress-cache.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/interface-shortcode.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/shortcodes/class-wppie-rss-shortcode.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/widgets/Latest-Episode-Widget/plugin.php';
 
 		/**
 		 * The class responsible for orchestrating the actions and filters of the

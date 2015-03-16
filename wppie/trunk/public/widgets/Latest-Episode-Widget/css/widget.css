@@ -1,0 +1,50 @@
+/* This stylesheet is used to style the public view of the widget. */
+.wppie_latest_ep > div {
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+}
+
+.wppie_latest_ep a {
+  text-decoration: underline;
+  color: #262626;
+}
+.wppie_latest_audio,
+.wppie_latest_audio > p > audio {
+  width: 97.5%;
+}
+
+.wppie_latest_audio > h4 {
+  margin: 0;
+}
+
+.wppie_latest_audio > p {
+  margin-bottom: 0.5em;
+}
+
+.wppie_latest_subscribe {
+  display: inline-block;
+  width: 55%;
+  margin: 0;
+  float: right;
+  color: #262626;
+}
+
+.wppie_latest_alleps {
+  display:inline-block;
+  width: 35%;
+  margin: 0;
+  text-align: center;
+  float: left;
+}
+
+.wppie_latest_subscribe > a > img {
+  height: 1.5em;
+  width: auto;
+  margin-left: 0.25em;
+  margin-bottom: 0.25em;
+  float: right;
+}
+
+.wppie_latest_subscribe > span {
+  float: right;
+}
